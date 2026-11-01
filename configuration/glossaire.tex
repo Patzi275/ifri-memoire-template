@@ -1,14 +1,16 @@
-\newacronym{acro}{acronyme}{Def acronyme}
+%------------------------%
+% Glossaire et acronymes %
+%------------------------%
 
-\newglossaryentry{acroglo}{type=\acronymtype, name={acroglo}, description={A la fois dans les deux\glsadd{acroglog}},see=[Glossaire:]{acroglog}
+% Acronymes : apparaissent dans la "Liste des acronymes".
+% À la première citation (\gls{...}), la forme longue s'affiche
+% puis, seule l'abréviation est utilisée.
+\newacronym{api}{API}{Application Programming Interface}
+\newacronym{html}{HTML}{HyperText Markup Language}
+
+% Terme de glossaire (mot défini).
+% Affichage : décommentez le glossaire principal dans main.tex (\printglossary[type=main]).
+\newglossaryentry{algorithme}{
+	name=algorithme,
+	description={suite finie et non ambiguë d'opérations permettant de résoudre un problème}
 }
-
-\newglossaryentry{acroglog}{name=acroglo, description={A la fois dans les deux.}}
-
-\newglossaryentry{glossaire}
- {
- name=glossaire,
- description={Ici se trouve le contenu du glossaire}
- }
- 
- 

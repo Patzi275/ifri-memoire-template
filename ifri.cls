@@ -1,6 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % modifié le 16/04/2008 par L. Grossard grossard@unilim.fr %
-%Version actualisée et en usage du template des Projets de Fin de Formation à l'IFRI, réalisée par ZOHOU Pierre Jérôme le 02/03/2020%
+% version actualisée et en usage du template des Projets de Fin de Formation à l'IFRI, réalisée par ZOHOU Pierre Jérôme le 02/03/2020 
+% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{ifri}[6/6/2013 custom CV class]
@@ -27,16 +28,16 @@
 \usepackage{float} % obliger l'image a rester la ou je veux
 \usepackage{pdfpages} % inclure les pages pdf d'un autre document
 \usepackage[hyphens]{url}
-    \def\UrlBreaks{\do\.\do\@\do\\\do\/\do\!\do\_\do\|\do\;\do\>%
-\do\]\do\)\do\,\do\?\do\'\do+\do\=\do\#\do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j\do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t\do\u\do\v\do\w\do\x\do\y\do\z%
-\do\A\do\B\do\C\do\D\do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N\do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X\do\Y\do\Z%
-\do\1\do\2\do\3\do\4\do\5\do\6\do\7\do\8\do\9\do\%\do\=}%
+\def\UrlBreaks{\do\.\do\@\do\\\do\/\do\!\do\_\do\|\do\;\do\>%
+	\do\]\do\)\do\,\do\?\do\'\do+\do\=\do\#\do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j\do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t\do\u\do\v\do\w\do\x\do\y\do\z%
+	\do\A\do\B\do\C\do\D\do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N\do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X\do\Y\do\Z%
+	\do\1\do\2\do\3\do\4\do\5\do\6\do\7\do\8\do\9\do\%\do\=}%
 %\usepackage{color} % les couleurs avec les divers modes d'appels
 % activer tous les liens
-\usepackage[ 
-            colorlinks=true,%activer la coloration des liens 
-            linkcolor=RoyalBlue,% personaliser la couleur des liens simple
-            ]{hyperref}
+\usepackage[
+	colorlinks=true,%activer la coloration des liens 
+	linkcolor=RoyalBlue,% personaliser la couleur des liens simple
+]{hyperref}
 
 %\usepackage[nonumberlist, acronym, toc]{glossaries} %Mise en forme du glossaire
 \usepackage[acronym, toc]{glossaries} %Mise en forme du glossaire
@@ -44,7 +45,7 @@
 % \renewcommand*{\glsgroupskip}{}
 % \renewcommand*{\glsseeformat}[3][\seename]{%
 % (\xmakefirstuc{#1} \glsseelist{#2}.)}
- 
+
 \usepackage{fancyhdr}
 \usepackage{lastpage} % la dernière page
 \usepackage{titlesec} % modifification des titres
@@ -64,23 +65,23 @@
 \definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
 \definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
 \definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
-\definecolor{lbcolor}{rgb}{0.9,0.9,0.9}  
+\definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
 \lstset{
-%language=Java,
-basicstyle=\ttfamily,
-basicstyle=\scriptsize,
-upquote=true,
-numbers=left,
-numberstyle=\tiny\color{black},
-stepnumber=1,
-numbersep=5pt,
-tabsize=2,
-showspaces=false,
-showstringspaces=false,
-extendedchars=true,
-backgroundcolor=\color{lbcolor}, 
-literate={á}{{\'a}}1 {ã}{{\~a}}1 {é}{{\'e}}1,
-frame=leftline
+	%language=Java,
+	basicstyle=\ttfamily,
+	basicstyle=\scriptsize,
+	upquote=true,
+	numbers=left,
+	numberstyle=\tiny\color{black},
+	stepnumber=1,
+	numbersep=5pt,
+	tabsize=2,
+	showspaces=false,
+	showstringspaces=false,
+	extendedchars=true,
+	backgroundcolor=\color{lbcolor},
+	literate={á}{{\'a}}1 {ã}{{\~a}}1 {é}{{\'e}}1,
+	frame=leftline
 }
 
 \lstdefinestyle{Shell}{delim=[il][\bfseries]{BB}}
@@ -143,40 +144,40 @@ frame=leftline
 \definecolor{fondBleu}{rgb}{0.95,0.95,1}
 
 \newenvironment{formal}{%
-  \def\FrameCommand{%
-    \hspace{1pt}%
-    {\color{black}\vrule width 2pt}%
-    {\color{lgray}\vrule width 4pt}%
-    \colorbox{lgray}%
-  }%
-  \MakeFramed{\advance\hsize-\width\FrameRestore}%
-  %\noindent\hspace{-4.55pt}% desactiver l'identation
-  %\noindent
-  \begin{adjustwidth}{}{7pt}%
-  \vspace{0pt}\vspace{0pt}%
+	\def\FrameCommand{%
+		\hspace{1pt}%
+		{\color{black}\vrule width 2pt}%
+		{\color{lgray}\vrule width 4pt}%
+		\colorbox{lgray}%
+	}%
+	\MakeFramed{\advance\hsize-\width\FrameRestore}%
+	%\noindent\hspace{-4.55pt}% desactiver l'identation
+	%\noindent
+	\begin{adjustwidth}{}{7pt}%
+	\vspace{0pt}\vspace{0pt}%
 }
 {%
-  \vspace{2pt}\end{adjustwidth}\endMakeFramed%
+	\vspace{2pt}\end{adjustwidth}\endMakeFramed%
 }
 
 
 \newcommand{\monBloc}[1]{
-\begin{formal}
-\emph{{#1}}
-\end{formal}
-}	
+	\begin{formal}
+		\emph{{#1}}
+	\end{formal}
+}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % commande epigraphe
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\epigraphe}[3]{
-    \begin{formal}
-	\ding{125}    
-    {\itshape #1}
-    \ding{126}
-    \end{formal}
-    {\raggedleft \textsc{#2} #3\par}
+	\begin{formal}
+		\ding{125}
+		{\itshape #1}
+		\ding{126}
+	\end{formal}
+	{\raggedleft \textsc{#2} #3\par}
 }
 
 
@@ -239,16 +240,16 @@ frame=leftline
 
 
 \if@titlepage
-  \renewenvironment{abstract}{%
-      %\null\vfil
-      \@beginparpenalty\@lowpenalty
-      \begin{center}%
-        \Huge \abstractname
-        \@endparpenalty\@M
-      \end{center}\fancyhf{}}%
-     {
-     %\par\vfil\null
-     }
+	\renewenvironment{abstract}{%
+		%\null\vfil
+		\@beginparpenalty\@lowpenalty
+		\begin{center}%
+			\Huge \abstractname
+			\@endparpenalty\@M
+		\end{center}\fancyhf{}}%
+	{
+		%\par\vfil\null
+	}
 \fi
 
 
@@ -279,10 +280,10 @@ frame=leftline
 %%%%%%%%% commenter les lignes suivantes pour avoir %%%%%%%%%%%%%%%
 %%%%%%%%%       les hauts de page en majuscule      %%%%%%%%%%%%%%%
 
-  \renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
-  \renewcommand{\chaptermark}[1]{%
-    \markboth{\if@mainmatter\@chapapp\ \thechapter. \fi\ #1}%
-    {\if@mainmatter\@chapapp\ \thechapter. \fi\ #1}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+\renewcommand{\chaptermark}[1]{%
+	\markboth{\if@mainmatter\@chapapp\ \thechapter. \fi\ #1}%
+	{\if@mainmatter\@chapapp\ \thechapter. \fi\ #1}}
 
 %surcharge des sections
 \titleformat{\section}
@@ -292,11 +293,11 @@ frame=leftline
 
 \titleclass{\part}{page}
 \titleformat{\part}[display]
-  {\centering\normalfont\huge\bfseries}
-  {\centering\normalfont\normalsize\scshape\partname\ \centering{\thepart}}
-  {2ex}
-  {\titlerule\vspace{1ex}}
-  [\vspace{2ex}\titlerule]
+{\centering\normalfont\huge\bfseries}
+{\centering\normalfont\normalsize\scshape\partname\ \centering{\thepart}}
+{2ex}
+{\titlerule\vspace{1ex}}
+[\vspace{2ex}\titlerule]
 
 {\newpage\renewcommand{\thepage}{\arabic{page}}\setcounter{page}{1}}
 
@@ -312,18 +313,18 @@ frame=leftline
 %% http://www.pommegyver.be/2010/11/latex-references-multiples-au-meme-footnote/
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\footnoteremember}[2]{
-\footnote{#2}
-\newcounter{#1}
-\setcounter{#1}{\value{footnote}}
+	\footnote{#2}
+	\newcounter{#1}
+	\setcounter{#1}{\value{footnote}}
 }
 
 \newcommand{\footnoterecall}[1]{
-\footnotemark[\value{#1}]
+	\footnotemark[\value{#1}]
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{nomencl}
 \renewcommand{\nomname}{Sigles et abréviations}
-\makenomenclature 
+\makenomenclature
 %\newcommand\resume{\chapter*{}\addcontentsline{toc}{chapter}{Résumé/Abstract}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -333,82 +334,82 @@ frame=leftline
 \newcommand{\listofalgorithmes}{\tocfile{\listalgorithmcfname}{loa}}
 
 \newcommand{\pageDeGarde}{
-%\pagecolor{lgray}
+	%\pagecolor{lgray}
 
-\begin{titlepage}
-\begin{center}
-\begin{tabular}{c}
-\textsf{{\scriptsize RÉPUBLIQUE DU BÉNIN}}
-\end{tabular}
-\end{center}
+	\begin{titlepage}
+		\begin{center}
+			\begin{tabular}{c}
+				\textsf{{\scriptsize RÉPUBLIQUE DU BÉNIN}}
+			\end{tabular}
+		\end{center}
 
-\vspace{-1.75cm}
-\begin{flushleft}
-\hspace{-0.5cm}
-\begin{tabular}{p{3.5cm}}
-\begin{flushright}
-\includegraphics[scale=0.5]{images/logoUAC1.png}\\
-\end{flushright}
-\end{tabular}
-\hfill
-\begin{tabular}{p{8.5cm}}
-\begin{center}
-{\scriptsize \textsf{MINISTÈRE DE L'ENSEIGNEMENT SUPÉRIEUR \\ET DE LA RECHERCHE SCIENTIFIQUE}\\}
-\vspace{0.25cm}
-{\scriptsize \textbf{\textsf{UNIVERSITÉ D'ABOMEY-CALAVI}}\\}
-\vspace{0.25cm}
-{\footnotesize \textbf {\textsf{INSTITUT DE FORMATION ET DE\\ RECHERCHE EN INFORMATIQUE}\\}}
-\vspace{0.25cm}
-{\scriptsize BP 526 Cotonou Tel : +229 21 14 19 88\\}
-\vspace{-0.25cm}
-{\scriptsize \url{http://www.ifri-uac.net} Courriel : \href{mailto:contact@ifri.uac.bj}{contact@ifri.uac.bj}}
-\end{center}
-\end{tabular}
-\hfill
-\begin{tabular}{p{3.5cm}}
-\begin{flushleft}
-\includegraphics[scale=0.5]{images/logoIfri.png}
-\end{flushleft}
-\end{tabular}
-\end{flushleft}
-%\vfill
-\begin{center}
+		\vspace{-1.75cm}
+		\begin{flushleft}
+			\hspace{-0.5cm}
+			\begin{tabular}{p{3.5cm}}
+				\begin{flushright}
+					\includegraphics[scale=0.5]{images/logo-uac.png}\\
+				\end{flushright}
+			\end{tabular}
+			\hfill
+			\begin{tabular}{p{8.5cm}}
+				\begin{center}
+					{\scriptsize \textsf{MINISTÈRE DE L'ENSEIGNEMENT SUPÉRIEUR \\ET DE LA RECHERCHE SCIENTIFIQUE}\\}
+					\vspace{0.25cm}
+					{\scriptsize \textbf{\textsf{UNIVERSITÉ D'ABOMEY-CALAVI}}\\}
+					\vspace{0.25cm}
+					{\footnotesize \textbf {\textsf{INSTITUT DE FORMATION ET DE\\ RECHERCHE EN INFORMATIQUE}\\}}
+					\vspace{0.25cm}
+					{\scriptsize BP 526 Cotonou Tel : +229 21 14 19 88\\}
+					\vspace{-0.25cm}
+					{\scriptsize \url{http://www.ifri-uac.net} Courriel : \href{mailto:contact@ifri.uac.bj}{contact@ifri.uac.bj}}
+				\end{center}
+			\end{tabular}
+			\hfill
+			\begin{tabular}{p{3.5cm}}
+				\begin{flushleft}
+					\includegraphics[scale=0.5]{images/logo-ifri.png}
+				\end{flushleft}
+			\end{tabular}
+		\end{flushleft}
+		%\vfill
+		\begin{center}
 
-{\textbf{{\Huge MÉMOIRE \\}}}
-\vspace{0.5cm}
-{\large pour l'obtention du\\}
-\vspace{0.5cm}
+			{\textbf{{\Huge MÉMOIRE \\}}}
+			\vspace{0.5cm}
+			{\large pour l'obtention du\\}
+			\vspace{0.5cm}
 
-{\large \bf \centering \@typeMemoire \\ }
-\vspace{0.5cm}
+			{\large \bf \centering \@typeMemoire \\ }
+			\vspace{0.5cm}
 
-{\large \centering \textbf{Option :} \@optionFormation \\ }
-\vspace{0.5cm}
+			{\large \centering \textbf{Option :} \@optionFormation \\ }
+			\vspace{0.5cm}
 
-{ \textbf{Présenté par} : \\}
-{\@etudiant{}}\\
-\vspace{1cm}
+			{ \textbf{Présenté par} : \\}
+			{\@etudiant{}}\\
+			\vspace{1cm}
 
-%{\rule{\textwidth}{0.2mm}}\vspace{3mm} \\
-{{\Huge {\bf \centering \@titreDuMemoire}}}\\
-%{\rule{\textwidth}{0.2mm}}\\
-\vspace{2cm}
-{ \textbf{Sous la supervision } : \\}
-{ \@encadrants{}}\\
-\vspace{1cm}
+			%{\rule{\textwidth}{0.2mm}}\vspace{3mm} \\
+			{{\Huge {\bf \centering \@titreDuMemoire}}}\\
+			%{\rule{\textwidth}{0.2mm}}\\
+			\vspace{2cm}
+			{ \textbf{Sous la supervision } : \\}
+			{ \@encadrants{}}\\
+			\vspace{1cm}
 
-{ \textbf{Membres du jury } : \\}
-{ \@jurys{}}\\
+			{ \textbf{Membres du jury } : \\}
+			{ \@jurys{}}\\
 
-\vfill
-\end{center}
+			\vfill
+		\end{center}
 
-\begin{center}
-{ Année Académique : \bf \@anneeScolaire }
-\end{center}
+		\begin{center}
+			{ Année Académique : \bf \@anneeScolaire }
+		\end{center}
 
 
-\end{titlepage}
+	\end{titlepage}
 }
 %Générer les index
 \makeindex

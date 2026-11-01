@@ -12,7 +12,7 @@
 
 \color{bookColor}
 
-%importation du glossaire
+% Importation du glossaire
 \loadglsentries{configuration/glossaire}
 
 \begin{document}
@@ -22,13 +22,13 @@
 
 \pagecolor{white}
 
-%% page vide
+%% Page vide
 %\thispagestyle{empty}\ \clearpage
 
 
 \selectlanguage{french}
 
-% sommaire
+% Sommaire
 \pagenumbering{roman}
 
 \setcounter{tocdepth}{0}
@@ -36,27 +36,27 @@
 \printlist{toc}{}{\chapter*{Sommaire}}
 \setcounter{tocdepth}{5}
 
-%% rdedicaces
+%% Dedicaces
 \include{liminaires/dedicace}
-\newpage 
+\newpage
 
-%% remerciements
+%% Remerciements
 \include{liminaires/remerciements}
-\newpage 
+\newpage
 
 % Résume
 \include{liminaires/resume}
 \newpage
 
-%liste des figures
-\listoffigures 
+% Liste des figures
+\listoffigures
 \newpage
 
-%liste des tableaux
+% Liste des tableaux
 \listoftables
 \newpage
 
-%liste des algo
+% Liste des algo
 \selectlanguage{french}
 \listofalgorithmes
 \newpage
@@ -66,7 +66,7 @@
 \printglossary[title=Liste des acronymes, toctitle=Liste des acronymes, type=\acronymtype]
 \newpage
 
-% Le glossaire proprement dit
+% Le glossaire proprement dit :
 %\setglossarystyle{super}
 %\printglossary[type=main]
 
@@ -81,19 +81,16 @@
 \fancyhead[R]{\scriptsize \rightmark}
 \fancyfoot[C]{\thepage}
 
-\chapter{-}\label{chap:1}
- \input{chapitres/chapitre-1}
- 
- \chapter{-}\label{chap:2}
- \input{chapitres/chapitre-2}
- 
-\chapter{--}\label{chap:3}
- \input{chapitres/chapitre-3}
- 
+\input{chapitres/chapitre-1/chapitre-1}
+
+\input{chapitres/chapitre-2/chapitre-2}
+
+\input{chapitres/chapitre-3/chapitre-3}
+
 % \include{perspectives}
-%%conclusion
+
+% Conclusion
 \include{chapitres/conclusion}
-% 
 \lhead[]{} \rhead[]{} \chead[]{}
 
 %%biblio
@@ -107,4 +104,4 @@
 \newpage
 \tableofcontents
 
-\end{document}          
+\end{document}
