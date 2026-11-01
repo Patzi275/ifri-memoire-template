@@ -1,73 +1,62 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% modifié le 16/04/2008 par L. Grossard grossard@unilim.fr %
-% version actualisée et en usage du template des Projets de Fin de Formation à l'IFRI, réalisée par ZOHOU Pierre Jérôme le 02/03/2020 
-% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ============================================================
+% Classe LaTeX du template de mémoire de l'IFRI (UAC).
+%
+%   Auteur d'origine : L. Grossard <grossard@unilim.fr>     — 16/04/2008
+%   Adaptation IFRI  : Dr. ZOHOU Pierre Jérôme              — 02/03/2020
+%   Refonte / màj    : ZOCLI Patrick                        — 2026
+% ============================================================
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{ifri}[6/6/2013 custom CV class]
 \LoadClass[a4paper,11pt,oneside]{report}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%  chargement des paquetages     %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% --- Packages ---
 \usepackage[T1]{fontenc}
-\usepackage{ucs}
-\usepackage[utf8x]{inputenc}
+\usepackage[utf8]{inputenc} % ucs + utf8x retirés : obsolètes, cassent sur TeX Live récent / Overleaf
 \usepackage[french, english]{babel}
-\usepackage[usenames,dvipsnames,svgnames,table]{xcolor} % les couleurs avec les divers modes d'appels
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
 \usepackage{setspace}
-\usepackage[]{graphicx} % pour insérer des images
+\usepackage[]{graphicx}
 \usepackage{amsmath}
 \usepackage{amsfonts}
-\usepackage[amssymb,cdot]{SIunits}% pour quelques symboles mathmatiques comme <ou=
-\usepackage{mathcomp} % pour avoir le mu droit  $\tcmu$
 \usepackage{multirow}
-\usepackage{geometry} % pour la mise en page: marge haut, bas, droit et gauche.
-\usepackage[Lenny]{fncychap} %personnaliser le titre des chapitres
-\usepackage{palatino} % choix de la police
-\usepackage{float} % obliger l'image a rester la ou je veux
-\usepackage{pdfpages} % inclure les pages pdf d'un autre document
+\usepackage{geometry}
+\usepackage[Lenny]{fncychap} % style des titres de chapitre
+\usepackage{mathpazo} % police Palatino (remplace palatino, obsolète ; accorde aussi les maths)
+\usepackage{float} % option [H] pour fixer la position des figures
+\usepackage{pdfpages} % insérer des PDF externes
 \usepackage[hyphens]{url}
 \def\UrlBreaks{\do\.\do\@\do\\\do\/\do\!\do\_\do\|\do\;\do\>%
 	\do\]\do\)\do\,\do\?\do\'\do+\do\=\do\#\do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j\do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t\do\u\do\v\do\w\do\x\do\y\do\z%
 	\do\A\do\B\do\C\do\D\do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N\do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X\do\Y\do\Z%
 	\do\1\do\2\do\3\do\4\do\5\do\6\do\7\do\8\do\9\do\%\do\=}%
-%\usepackage{color} % les couleurs avec les divers modes d'appels
-% activer tous les liens
 \usepackage[
-	colorlinks=true,%activer la coloration des liens 
-	linkcolor=RoyalBlue,% personaliser la couleur des liens simple
+	colorlinks=true,
+	linkcolor=RoyalBlue,
 ]{hyperref}
 
-%\usepackage[nonumberlist, acronym, toc]{glossaries} %Mise en forme du glossaire
-\usepackage[acronym, toc]{glossaries} %Mise en forme du glossaire
-%\usepackage[nonumberlist,style=altlist]{glossaries}
-% \renewcommand*{\glsgroupskip}{}
-% \renewcommand*{\glsseeformat}[3][\seename]{%
-% (\xmakefirstuc{#1} \glsseelist{#2}.)}
+\usepackage[acronym, toc]{glossaries} % glossaire et acronymes
 
 \usepackage{fancyhdr}
-\usepackage{lastpage} % la dernière page
-\usepackage{titlesec} % modifification des titres
-\usepackage[strict]{changepage} % ajustement automatique de la largeur des frame
-\usepackage{framed} % pour definir nos propres frames
-\usepackage{listings} % listing de code
-\usepackage{listingsutf8} % listing utf8
+\usepackage{lastpage}
+\usepackage{titlesec} % personnalisation des titres
+\usepackage[strict]{changepage} % adjustwidth, pour le bloc encadré
+\usepackage{framed} % cadres (bloc monBloc)
+\usepackage{listings} % listings de code
+\usepackage{listingsutf8}
 \usepackage{caption}
-\usepackage[francais]{minitoc} % mini table des matières
+\usepackage[francais]{minitoc} % utilisé pour la liste des algorithmes
 \usepackage{pifont}
-\usepackage{pdflscape} % mettre certaines page en paysage
-\usepackage{courier} % pour les listings
+\usepackage{pdflscape} % pages en paysage
+\usepackage{courier} % police à chasse fixe pour les listings
 
 
-% les couleurs du code
-\definecolor{javared}{rgb}{0.6,0,0} % for strings
-\definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
-\definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
-\definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
+% Couleurs des listings de code
+\definecolor{javared}{rgb}{0.6,0,0}
+\definecolor{javagreen}{rgb}{0.25,0.5,0.35}
+\definecolor{javapurple}{rgb}{0.5,0,0.35}
+\definecolor{javadocblue}{rgb}{0.25,0.35,0.75}
 \definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
 \lstset{
-	%language=Java,
 	basicstyle=\ttfamily,
 	basicstyle=\scriptsize,
 	upquote=true,
@@ -88,33 +77,17 @@
 
 \definecolor{gris}{rgb}{68,68,68}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
-\definecolor{lgray}{gray}{0.97} % page de garde
-\definecolor{bookColor}{cmyk}{0 , 0  , 0   , 0.98}  % 0.90\% of black
-\usepackage{multirow} % pour les rowspan des tableaux
+\definecolor{lgray}{gray}{0.97}
+\definecolor{bookColor}{cmyk}{0 , 0  , 0   , 0.98}
 \usepackage{longtable} % tableaux sur plusieurs pages
-%\usepackage[chapter]{algorithm}
-%\usepackage[french]{algorithm2e}
 \usepackage{tocbibind}
 
 \usepackage[french,linesnumbered,lined,boxed,commentsnumbered,ruled]{algorithm2e}
-\usepackage{algpseudocode} % algorithmic
-%\usepackage{algorithmic}
+\usepackage{algpseudocode}
 
-%\usepackage{auto-pst-pdf} 
-\usepackage{pstricks,pst-node,pst-tree}
+% pstricks/pst-node/pst-tree retirés : exigent --shell-escape avec pdfLaTeX (incompatible Overleaf). Utiliser TikZ au besoin.
 
-%%%%%%%%%% personnalisation des algos
-
-%\floatname{algorithm}{Algorithme}
-% changement du style des commentaires
-%\renewcommand{\algorithmiccomment}[1]{// #1}
-%\let\mylistof\listof
-%\renewcommand\listof[2]{\mylistof{algorithm}{\textbf{Liste des algorithmes}}}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Definition des variables %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+% --- Variables du mémoire (renseignées dans configuration/metadonnees.tex) ---
 \newcommand{\titreDuMemoire}[1]{\newcommand{\@titreDuMemoire}{#1}}
 \newcommand{\typeMemoire}[1]{\newcommand{\@typeMemoire}{#1}}
 \newcommand{\etudiant}[1]{\newcommand{\@etudiant}{#1}}
@@ -126,21 +99,17 @@
 \newcommand{\titre}[1]{\newcommand{\@titre}{#1}}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Mise en page
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% --- Mise en page ---
 \geometry{tmargin=2cm,bmargin=2cm,lmargin=2cm,rmargin=2cm}
 \setlength\headheight{15pt}
-\renewcommand{\baselinestretch}{1.2} % espace entre les lignes
+\renewcommand{\baselinestretch}{1.2} % interligne
 \pagestyle{headings}
 
 
 \renewcommand{\listfigurename}{Liste des figures}
 \renewcommand{\listtablename}{Liste des tableaux}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Le bloc monBloc
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% Bloc encadré (monBloc)
 \definecolor{fondBleu}{rgb}{0.95,0.95,1}
 
 \newenvironment{formal}{%
@@ -151,8 +120,6 @@
 		\colorbox{lgray}%
 	}%
 	\MakeFramed{\advance\hsize-\width\FrameRestore}%
-	%\noindent\hspace{-4.55pt}% desactiver l'identation
-	%\noindent
 	\begin{adjustwidth}{}{7pt}%
 	\vspace{0pt}\vspace{0pt}%
 }
@@ -168,9 +135,7 @@
 }
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% commande epigraphe
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Épigraphe
 \newcommand{\epigraphe}[3]{
 	\begin{formal}
 		\ding{125}
@@ -181,34 +146,11 @@
 }
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% modification de la numerotation %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% --- Numérotation ---
+\setcounter{secnumdepth}{3} % numérote jusqu'à 4 niveaux
+\setcounter{tocdepth}{2}    % en affiche 2 dans la toc
 
-% niveau de hirarchie  3
-\setcounter{secnumdepth}{3}	% permet de numroter 4 niveaux
-\setcounter{tocdepth}{2}	% et en affiche 2 dans la toc
-
-% saut de page aprs le titre du chapitre
-\def\chapitre#1{\chapter{#1}\newpage}
-% compteur de partie sous la forme A, B, ...
-%\renewcommand\thepart{\Alph{part}}
-% compteur de chapitre sous la forme 1), 2) ...
-%\renewcommand{\thechapter}{\arabic{chapter}}
-% compteur de section sous la forme I, II, ...
-%\renewcommand{\thesection}{\Roman{section}}
-% compteur de section sous la forme I, II...
-%\renewcommand{\thesection}{\Roman{section}}
-% compteur de sous-section sous la forme 1), 2)...
-%\renewcommand{\thesubsection}{\arabic{subsection})}
-% compteur de sous-sous-section sous la forme 1), 2)...
-%\renewcommand{\thesubsubsection}{\arabic{subsubsection})}
-%differente pagination pour les tableaux
-%\renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}
-%différente pagination pour les figures
-%\renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
-%différente pagination la table des matières
-%\renewcommand{\glsaddall}{\arabic{chapter}.\arabic{glossary}}
+\def\chapitre#1{\chapter{#1}\newpage} % saut de page après le titre de chapitre
 
 \newcommand\dedicace{\chapter*{Dédicace}\addcontentsline{toc}{chapter}{Dédicace}}
 \newcommand\remerciements{\chapter*{Remerciements}\addcontentsline{toc}{chapter}{Remerciements}}
@@ -217,79 +159,41 @@
 \newcommand\resume{\chapter*{}\addcontentsline{toc}{chapter}{Résumé}}
 \newcommand\annexe{\chapter*{}\addcontentsline{toc}{chapter}{Annexes}}
 
-%\renewcommand\glsaddall{\chapter*{Glossaire}\addcontentsline{toc}{chapter}{Glossaire}}
-
-%\newcommand\resume{\subsubsection*{}\addcontentsline{toc}{chapter}{Résumé / Abstract}}
-
 \renewcommand\printglossaries{\chapter*{Glossaire}\addcontentsline{toc}{chapter}{Glossaire}}
 
-%\renewcommand\printsigles{\chapter*{Sigles et Abréviations}\addcontentsline{toc}{chapter}{Sigles et Abréviations}}
 
-
-\RequirePackage{fancyhdr}
+% fancyhdr déjà chargé plus haut
 \pagestyle{fancy}
 \fancyhf{}
 
-%\fancyfoot[R]{\thepage / \pageref{LastPage}}
 \fancyfoot[C]{\thepage}
 \fancyhead[L]{\tiny \leftmark}
 \fancyhead[R]{\scriptsize \rightmark}
 
-% french and english abstract on same page
-% http://www.latex-community.org/forum/viewtopic.php?f=44&t=13708
-
-
+% Résumé FR et EN sur la même page (redéfinition de l'environnement abstract)
 \if@titlepage
 	\renewenvironment{abstract}{%
-		%\null\vfil
 		\@beginparpenalty\@lowpenalty
 		\begin{center}%
 			\Huge \abstractname
 			\@endparpenalty\@M
 		\end{center}\fancyhf{}}%
 	{
-		%\par\vfil\null
 	}
 \fi
 
 
-% \newglossarystyle{clong}{%
-%  \renewenvironment{theglossary}%
-%      {\begin{longtable}{p{.3\linewidth}p{\glsdescwidth}}}%
-%      {\end{longtable}}%
-%   \renewcommand*{\glossaryheader}{}%
-%   \renewcommand*{\glsgroupheading}[1]{}%
-%   \renewcommand*{\glossaryentryfield}[5]{%
-%     \glstarget{##1}{##2} & ##3\glspostdescription\space ##5\\}%
-%   \renewcommand*{\glossarysubentryfield}[6]{%
-%      & \glstarget{##2}{\strut}##4\glspostdescription\space ##6\\}%
-%   %\renewcommand*{\glsgroupskip}{ & \\}%
-% }
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% modification de la toc          %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+% --- Table des matières ---
 \RequirePackage{tocloft}
-%\renewcommand{\cftchapnumwidth}{\setlength{0.7cm}}
-%\renewcommand{\cftsecnumwidth}{\setlength{0.7cm}}
-%\renewcommand{\cftsubsecnumwidth}{\setlength{0.7cm}}
-%\renewcommand{\cftsubsubsecnumwidth}{\setlength{0.7cm}}
 
-%%%%%%%%% commenter les lignes suivantes pour avoir %%%%%%%%%%%%%%%
-%%%%%%%%%       les hauts de page en majuscule      %%%%%%%%%%%%%%%
-
+% Hauts de page (en-têtes) : titre courant des sections et chapitres
 \renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
 \renewcommand{\chaptermark}[1]{%
 	\markboth{\if@mainmatter\@chapapp\ \thechapter. \fi\ #1}%
 	{\if@mainmatter\@chapapp\ \thechapter. \fi\ #1}}
 
-%surcharge des sections
 \titleformat{\section}
-{\normalfont\Large\bfseries}{\thesection}{0.5em}{}[\hspace{1ex}] %\titlerule par Ezin
-
-% surcharge des titres des parties
+{\normalfont\Large\bfseries}{\thesection}{0.5em}{}[\hspace{1ex}]
 
 \titleclass{\part}{page}
 \titleformat{\part}[display]
@@ -302,16 +206,11 @@
 {\newpage\renewcommand{\thepage}{\arabic{page}}\setcounter{page}{1}}
 
 
-% enlever le point à la fin
-\renewcommand*{\glspostdescription}{}
-% mettre deux points apres les titres
-\renewcommand{\glsnamefont}[1]{\textbf{#1 :  }}
+\renewcommand*{\glspostdescription}{} % pas de point final
+\renewcommand{\glsnamefont}[1]{\textbf{#1 :  }} % deux points après les titres
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%ù
-%% Références multiples au même footnote
-%% http://www.pommegyver.be/2010/11/latex-references-multiples-au-meme-footnote/
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Références multiples vers une même note de bas de page
 \newcommand{\footnoteremember}[2]{
 	\footnote{#2}
 	\newcounter{#1}
@@ -321,21 +220,11 @@
 \newcommand{\footnoterecall}[1]{
 	\footnotemark[\value{#1}]
 }
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{nomencl}
-\renewcommand{\nomname}{Sigles et abréviations}
-\makenomenclature
-%\newcommand\resume{\chapter*{}\addcontentsline{toc}{chapter}{Résumé/Abstract}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% les éléments dz la page de garde%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% --- Page de garde ---
 \newcommand{\listofalgorithmes}{\tocfile{\listalgorithmcfname}{loa}}
 
 \newcommand{\pageDeGarde}{
-	%\pagecolor{lgray}
-
 	\begin{titlepage}
 		\begin{center}
 			\begin{tabular}{c}
@@ -372,7 +261,6 @@
 				\end{flushleft}
 			\end{tabular}
 		\end{flushleft}
-		%\vfill
 		\begin{center}
 
 			{\textbf{{\Huge MÉMOIRE \\}}}
@@ -390,9 +278,7 @@
 			{\@etudiant{}}\\
 			\vspace{1cm}
 
-			%{\rule{\textwidth}{0.2mm}}\vspace{3mm} \\
 			{{\Huge {\bf \centering \@titreDuMemoire}}}\\
-			%{\rule{\textwidth}{0.2mm}}\\
 			\vspace{2cm}
 			{ \textbf{Sous la supervision } : \\}
 			{ \@encadrants{}}\\
@@ -411,9 +297,8 @@
 
 	\end{titlepage}
 }
-%Générer les index
+
 \makeindex
-%Activate glossary commands
 \makeglossaries
 
 \author{}
