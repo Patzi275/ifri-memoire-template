@@ -82,7 +82,7 @@ Aucun éditeur n'est imposé : n'importe quel éditeur convient, du moment qu'il
 
 1. **`configuration/metadonnees.tex`** : titre, auteur, option, jury, dates. Le seul fichier d'identité à remplir.
 2. **`liminaires/`** et **`chapitres/`** : écrivez votre contenu. Les chapitres sont déjà pré-structurés (état de l'art, méthodologie, résultats) — titres et sections adaptables.
-3. **`images/`** pour les figures, **`biblio.bib`** pour les références (`\cite{...}`), **`configuration/glossaire.tex`** pour les acronymes.
+3. **`images/`** pour les figures, **`biblio.bib`** pour les références (`\cite{...}` ; une entrée `@online` va dans la Webographie), **`configuration/glossaire.tex`** pour les acronymes.
 
 Vous n'avez pas forcément besoin de toucher à la mise en page : elle vit dans `ifri.cls`.
 
@@ -108,7 +108,7 @@ Dockerfile          Image TeX Live figée (méthode Docker)
 
 - [Documentation LaTeX d'Overleaf](https://www.overleaf.com/learn) : le point de départ, très complet et en libre accès.
 - [Apprendre LaTeX en 30 minutes](https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes) : l'essentiel pour commencer.
-- [Gérer la bibliographie avec BibTeX](https://www.overleaf.com/learn/latex/Bibliography_management_with_bibtex) : pour `biblio.bib` et `\cite`.
+- [Gérer la bibliographie avec biblatex](https://www.overleaf.com/learn/latex/Bibliography_management_with_biblatex) : pour `biblio.bib` et `\cite`.
 - [Package `glossaries`](https://www.overleaf.com/learn/latex/Glossaries) : pour les acronymes et le glossaire.
 - [latexmk](https://ctan.org/pkg/latexmk) : l'outil de compilation utilisé par ce template.
 

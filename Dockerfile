@@ -13,7 +13,8 @@ FROM debian:trixie-slim
 #   science          : algorithm2e
 #   lang-french      : babel french, minitoc francais
 #   extra-utils      : makeglossaries
-#   publishers       : IEEEtran (style bibliographique IEEE)
+#   bibtex-extra     : biblatex + style ieee (bibliographie / webographie)
+#   biber            : moteur de biblatex
 RUN apt-get update && apt-get install -y --no-install-recommends \
         texlive-latex-base \
         texlive-latex-recommended \
@@ -22,7 +23,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         texlive-science \
         texlive-lang-french \
         texlive-extra-utils \
-        texlive-publishers \
+        texlive-bibtex-extra \
+        biber \
         latexmk \
     && rm -rf /var/lib/apt/lists/*
 

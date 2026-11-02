@@ -4,7 +4,7 @@
 # Moteur : pdfLaTeX
 $pdf_mode = 1;
 
-# Bibliographie : bibtex (\bibliography + \bibliographystyle)
+# Bibliographie : biblatex + biber
 $bibtex_use = 2;
 
 # Fichiers auxiliaires dans build/

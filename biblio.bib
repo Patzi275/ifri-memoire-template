@@ -1,8 +1,16 @@
-% Exemple de référence bibliographique.
-% Citez une entrée dans le texte avec \cite{exemple-livre}.
+% Références citées avec \cite{clé}.
+% @book / @article… -> Bibliographie ; @online -> Webographie.
+
 @book{exemple-livre,
-  author = {Nom, Prenom},
-  title = {Titre de l'ouvrage de reference},
+  author    = {Nom, Prenom},
+  title     = {Titre de l'ouvrage de reference},
   publisher = {Editeur},
-  year = {2024},
+  year      = {2024},
+}
+
+@online{exemple-site,
+  author  = {{IFRI}},
+  title   = {Page d'accueil},
+  url     = {https://www.ifri-uac.net},
+  urldate = {2026-01-01},
 }

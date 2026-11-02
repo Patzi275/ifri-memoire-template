@@ -5,6 +5,10 @@
 \usepackage{titletoc}
 \setlength{\glsdescwidth}{0.65\textwidth}
 
+% Bibliographie : biblatex + biber, style IEEE
+\usepackage[backend=biber, style=ieee, sorting=none]{biblatex}
+\addbibresource{biblio.bib}
+
 % Métadonnées du mémoire (titre, auteur, jury, dates...) : à remplir ici
 \input{configuration/metadonnees}
 
@@ -75,9 +79,9 @@
 \include{chapitres/conclusion}
 \lhead[]{} \rhead[]{} \chead[]{}
 
-% Bibliographie
-\bibliographystyle{IEEEtran}
-\bibliography{biblio}
+% Bibliographie et Webographie
+\printbibliography[nottype=online, title={Bibliographie}, heading=bibintoc]
+\printbibliography[type=online, title={Webographie}, heading=bibintoc]
 
 % Annexe : décommenter pour l'inclure
 %\include{annexes/annexe}
