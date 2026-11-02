@@ -13,7 +13,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc} % ucs + utf8x retirés : obsolètes, cassent sur TeX Live récent / Overleaf
 \usepackage[french, english]{babel}
-\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage[dvipsnames,svgnames,table]{xcolor}
 \usepackage{setspace}
 \usepackage[]{graphicx}
 \usepackage{amsmath}
@@ -83,7 +83,6 @@
 \usepackage{tocbibind}
 
 \usepackage[french,linesnumbered,lined,boxed,commentsnumbered,ruled]{algorithm2e}
-\usepackage{algpseudocode}
 
 % pstricks/pst-node/pst-tree retirés : exigent --shell-escape avec pdfLaTeX (incompatible Overleaf). Utiliser TikZ au besoin.
 

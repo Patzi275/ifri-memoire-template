@@ -1,5 +1,5 @@
-# Figé via Debian bookworm (= TeX Live 2022). Jamais "latest".
-FROM debian:bookworm-slim
+# Figé via Debian trixie (= TeX Live 2025). Jamais "latest".
+FROM debian:trixie-slim
 
 # Collections TeX Live couvrant les \usepackage de ifri.cls, + latexmk et makeglossaries.
 # (À tenir à jour si on ajoute un package : voir config dans ifri.cls.)
@@ -10,9 +10,10 @@ FROM debian:bookworm-slim
 #                      changepage, framed, tocloft, minitoc, pdfpages,
 #                      pdflscape, glossaries, listingsutf8
 #   fonts-recommended: mathpazo, courier, pifont
-#   science          : algorithm2e, algpseudocode (algorithmicx)
+#   science          : algorithm2e
 #   lang-french      : babel french, minitoc francais
 #   extra-utils      : makeglossaries
+#   publishers       : IEEEtran (style bibliographique IEEE)
 RUN apt-get update && apt-get install -y --no-install-recommends \
         texlive-latex-base \
         texlive-latex-recommended \
@@ -21,6 +22,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         texlive-science \
         texlive-lang-french \
         texlive-extra-utils \
+        texlive-publishers \
         latexmk \
     && rm -rf /var/lib/apt/lists/*
 

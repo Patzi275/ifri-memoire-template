@@ -335,3 +335,6 @@ TSWLatexianTemp*
 
 # Dossier de compilation latexmk
 build/
+
+# Données locales de Claude Code (plans, worktrees, mémoire)
+.claude/
