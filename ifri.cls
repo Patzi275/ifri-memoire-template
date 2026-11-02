@@ -109,6 +109,7 @@
 \addto\captionsfrench{%
 	\renewcommand{\listfigurename}{Liste des figures}%
 	\renewcommand{\listtablename}{Liste des tableaux}%
+	\renewcommand{\listalgorithmcfname}{Liste des algorithmes}%
 }
 
 % Bloc encadré (monBloc)
