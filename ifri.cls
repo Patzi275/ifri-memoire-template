@@ -105,8 +105,11 @@
 \pagestyle{headings}
 
 
-\renewcommand{\listfigurename}{Liste des figures}
-\renewcommand{\listtablename}{Liste des tableaux}
+% Renommange via babel pour que les noms ne soient pas écrasés au changement de langue
+\addto\captionsfrench{%
+	\renewcommand{\listfigurename}{Liste des figures}%
+	\renewcommand{\listtablename}{Liste des tableaux}%
+}
 
 % Bloc encadré (monBloc)
 \definecolor{fondBleu}{rgb}{0.95,0.95,1}
