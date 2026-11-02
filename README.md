@@ -1,7 +1,17 @@
 # Template de mémoire IFRI
 
-Template LaTeX non officiel pour les mémoires et projets de fin de formation de l'IFRI (UAC).
+Template LaTeX *non officiel* pour les mémoires et projets de fin de formation de l'IFRI (UAC).
 Pensé pour être simple à prendre en main, portable (Windows, Linux, WSL, Overleaf) et reproductible.
+
+**Sommaire**
+
+- [Compiler](#compiler)
+- [Éditeurs de texte](#éditeurs-de-texte)
+- [Remplissage du mémoire](#remplissage)
+- [Structure](#structure)
+- [Ressources utiles](#ressources-utiles)
+- [Contribution](#contribution)
+- [Licence](#licence)
 
 ## Compiler
 
@@ -30,7 +40,7 @@ Installez une distribution LaTeX, puis lancez `latexmk main.tex`.
 Deux étapes distinctes :
 
 - **`docker build`** *construit* l'image (installe TeX Live dedans) : **une seule fois**, et à refaire
-  seulement si le `Dockerfile` change. L'image fait environ **1,3 Go**.
+  seulement si le `Dockerfile` change. L'image fait environ **1,4 Go**.
 - **`docker run`** *exécute* `latexmk` dans cette image pour *générer le PDF* : **à chaque compilation**, et rapide.
 
 La commande de lancement dépend du terminal :
@@ -58,7 +68,7 @@ docker run --rm -v "%cd%:/work" ifri-latex
 Importez le dossier (ou un zip), ouvrez `main.tex` et compilez. Overleaf gère tout en ligne.
 
 > Pour obtenir un PDF **identique** partout, utilisez la même année TeX Live sur les trois
-> méthodes (le Dockerfile est figé sur TeX Live 2022 ; réglez Overleaf en conséquence).
+> méthodes (le Dockerfile est figé sur TeX Live 2025 ; réglez Overleaf en conséquence).
 
 ## Éditeurs de texte
 
@@ -68,10 +78,10 @@ Aucun éditeur n'est imposé : n'importe quel éditeur convient, du moment qu'il
 - **VS Code** + l'extension *LaTeX Workshop* : réglez la recette de compilation sur `latexmk` (elle lit le `.latexmkrc` du projet).
 - **TeXstudio** ou **TeXmaker** : éditeurs LaTeX dédiés ; pointez la commande de compilation sur `latexmk`.
 
-## Remplir votre mémoire
+## Remplissage
 
 1. **`configuration/metadonnees.tex`** : titre, auteur, option, jury, dates. Le seul fichier d'identité à remplir.
-2. **`liminaires/`** et **`chapitres/`** : écrivez votre contenu (dédicace, résumé, introduction, chapitres, conclusion).
+2. **`liminaires/`** et **`chapitres/`** : écrivez votre contenu. Les chapitres sont déjà pré-structurés (état de l'art, méthodologie, résultats) — titres et sections adaptables.
 3. **`images/`** pour les figures, **`biblio.bib`** pour les références (`\cite{...}`), **`configuration/glossaire.tex`** pour les acronymes.
 
 Vous n'avez pas forcément besoin de toucher à la mise en page : elle vit dans `ifri.cls`.
@@ -84,7 +94,8 @@ ifri.cls            Classe : mise en page + page de garde (en principe, pas à m
 biblio.bib          Références bibliographiques
 configuration/      metadonnees.tex (à remplir), glossaire.tex
 liminaires/         dédicace, remerciements, résumé
-chapitres/          introduction, chapitre-1/2/3, conclusion
+chapitres/          introduction.tex, conclusion.tex,
+                    chapitre-1/ 2/ 3/ (un dossier par chapitre, un fichier par section)
 annexes/            annexe.tex (désactivée par défaut dans main.tex)
 images/             logos et figures
 .latexmkrc          Chaîne de compilation (ne pas dupliquer ailleurs)
@@ -93,7 +104,7 @@ Dockerfile          Image TeX Live figée (méthode Docker)
 
 ## Ressources utiles
 
-**LaTeX** — pour débuter ou approfondir :
+**LaTeX** pour débuter ou approfondir :
 
 - [Documentation LaTeX d'Overleaf](https://www.overleaf.com/learn) : le point de départ, très complet et en libre accès.
 - [Apprendre LaTeX en 30 minutes](https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes) : l'essentiel pour commencer.
@@ -103,8 +114,8 @@ Dockerfile          Image TeX Live figée (méthode Docker)
 
 **Rédaction du mémoire** :
 
-- [Guide de rédaction (John Aoga)](https://johnaoga.github.io/guide-redaction)
-- [Réussir son mémoire en informatique (PDF)](https://ratheil.info/teaching-resources/reussir-son-memoire-en-informatique.pdf)
+- [Guide de rédaction (Dr. John AOGA)](https://johnaoga.github.io/guide-redaction)
+- [Réussir son mémoire en informatique (Dr. Ratheil HOUNDJI)](https://ratheil.info/teaching-resources/reussir-son-memoire-en-informatique.pdf)
 
 ## Contribution
 
