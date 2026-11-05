@@ -86,6 +86,8 @@ Aucun éditeur n'est imposé : n'importe quel éditeur convient, du moment qu'il
 
 Vous n'avez pas forcément besoin de toucher à la mise en page : elle vit dans `ifri.cls`.
 
+Pour ne pas perdre son travail : forker/télécharger le dépôt sur GitHub et committer/pousser de temps en temps (ou s'appuyer sur l'historique de versions d'Overleaf).
+
 ## Structure
 
 ```
