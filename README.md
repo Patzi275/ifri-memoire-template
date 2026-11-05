@@ -33,7 +33,7 @@ Choisissez-en une.
 Installez une distribution LaTeX, puis lancez `latexmk main.tex`.
 
 - **[TeX Live](https://tug.org/texlive)** (Linux, WSL, macOS) : installation complète, ou installez les packages manquants au besoin.
-- **[MiKTeX](https://miktex.org/download)** (Windows) : installez aussi **[Strawberry Perl](https://strawberryperl.com)**, dont `latexmk` a besoin.
+- **[MiKTeX](https://miktex.org/download)** (Windows) : installez aussi **[Strawberry Perl](https://strawberryperl.com)**, dont `latexmk` a besoin. Pour que MiKTeX installe les packages manquants sans redemander à chaque fois : `initexmf --set-config-value="[MPM]AutoInstall=1"`.
 
 ### 2. Avec Docker (sans installer LaTeX)
 
