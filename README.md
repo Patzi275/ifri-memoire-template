@@ -1,6 +1,6 @@
 # Template de mémoire IFRI
 
-Template LaTeX *non officiel* pour les mémoires et projets de fin de formation de l'IFRI (UAC).
+Template LaTeX _non officiel_ pour les mémoires et projets de fin de formation de l'IFRI (UAC).
 Pensé pour être simple à prendre en main, portable (Windows, Linux, WSL, Overleaf) et reproductible.
 
 **Sommaire**
@@ -32,16 +32,16 @@ Choisissez-en une.
 
 Installez une distribution LaTeX, puis lancez `latexmk main.tex`.
 
-- **TeX Live** (Linux, WSL, macOS) : installation complète, ou installez les packages manquants au besoin.
-- **MiKTeX** (Windows) : installez aussi **Strawberry Perl**, dont `latexmk` a besoin.
+- **[TeX Live](https://tug.org/texlive)** (Linux, WSL, macOS) : installation complète, ou installez les packages manquants au besoin.
+- **[MiKTeX](https://miktex.org/download)** (Windows) : installez aussi **Strawberry Perl**, dont `latexmk` a besoin.
 
 ### 2. Avec Docker (sans installer LaTeX)
 
 Deux étapes distinctes :
 
-- **`docker build`** *construit* l'image (installe TeX Live dedans) : **une seule fois**, et à refaire
+- **`docker build`** _construit_ l'image (installe TeX Live dedans) : **une seule fois**, et à refaire
   seulement si le `Dockerfile` change. L'image fait environ **1,4 Go**.
-- **`docker run`** *exécute* `latexmk` dans cette image pour *générer le PDF* : **à chaque compilation**, et rapide.
+- **`docker run`** _exécute_ `latexmk` dans cette image pour _générer le PDF_ : **à chaque compilation**, et rapide.
 
 La commande de lancement dépend du terminal :
 
@@ -65,7 +65,7 @@ docker run --rm -v "%cd%:/work" ifri-latex
 
 ### 3. Sur Overleaf
 
-Importez le dossier (ou un zip), ouvrez `main.tex` et compilez. Overleaf gère tout en ligne.
+Importez le dossier (ou un zip), ouvrez `main.tex` et compilez. [Overleaf](https://www.overleaf.com) gère tout en ligne.
 
 > Pour obtenir un PDF **identique** partout, utilisez la même année TeX Live sur les trois
 > méthodes (le Dockerfile est figé sur TeX Live 2025 ; réglez Overleaf en conséquence).
@@ -75,7 +75,7 @@ Importez le dossier (ou un zip), ouvrez `main.tex` et compilez. Overleaf gère t
 Aucun éditeur n'est imposé : n'importe quel éditeur convient, du moment qu'il sait lancer
 `latexmk`. Deux choix courants pour travailler en local (Overleaf a son propre éditeur, voir méthode 3) :
 
-- **VS Code** + l'extension *LaTeX Workshop* : réglez la recette de compilation sur `latexmk` (elle lit le `.latexmkrc` du projet).
+- **VS Code** + l'extension _LaTeX Workshop_ : réglez la recette de compilation sur `latexmk` (elle lit le `.latexmkrc` du projet).
 - **TeXstudio** ou **TeXmaker** : éditeurs LaTeX dédiés ; pointez la commande de compilation sur `latexmk`.
 
 ## Remplissage
@@ -130,5 +130,3 @@ Suggestions et corrections bienvenues (issue ou pull request). Quelques règles 
 
 [LPPL 1.3c](https://www.latex-project.org/lppl/lppl-1-3c/), comme le template IFRI d'origine.
 `ifri.cls` (modifiée) crédite ses auteurs d'origine dans son en-tête.
-
-
