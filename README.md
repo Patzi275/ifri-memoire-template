@@ -33,7 +33,7 @@ Choisissez-en une.
 Installez une distribution LaTeX, puis lancez `latexmk main.tex`.
 
 - **[TeX Live](https://tug.org/texlive)** (Linux, WSL, macOS) : installation complète, ou installez les packages manquants au besoin.
-- **[MiKTeX](https://miktex.org/download)** (Windows) : installez aussi **Strawberry Perl**, dont `latexmk` a besoin.
+- **[MiKTeX](https://miktex.org/download)** (Windows) : installez aussi **[Strawberry Perl](https://strawberryperl.com)**, dont `latexmk` a besoin.
 
 ### 2. Avec Docker (sans installer LaTeX)
 
@@ -75,8 +75,8 @@ Importez le dossier (ou un zip), ouvrez `main.tex` et compilez. [Overleaf](https
 Aucun éditeur n'est imposé : n'importe quel éditeur convient, du moment qu'il sait lancer
 `latexmk`. Deux choix courants pour travailler en local (Overleaf a son propre éditeur, voir méthode 3) :
 
-- **VS Code** + l'extension _LaTeX Workshop_ : réglez la recette de compilation sur `latexmk` (elle lit le `.latexmkrc` du projet).
-- **TeXstudio** ou **TeXmaker** : éditeurs LaTeX dédiés ; pointez la commande de compilation sur `latexmk`.
+- **[VS Code](https://code.visualstudio.com)** + l'extension _[LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop)_ : réglez la recette de compilation sur `latexmk` (elle lit le `.latexmkrc` du projet).
+- **[TeXstudio](https://www.texstudio.org)** ou **[TeXmaker](https://www.xm1math.net/texmaker/)** : éditeurs LaTeX dédiés ; pointez la commande de compilation sur `latexmk`.
 
 ## Remplissage
 
